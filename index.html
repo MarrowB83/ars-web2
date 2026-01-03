@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autodoprava René Sedláček s.r.o. | Nadměrné náklady a logistika</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Spolehlivá nákladní doprava v ČR a EU. Specializujeme se na nadměrné náklady, přepravu stavební techniky, sypké materiály a non-stop odtahovou službu.">
+    <meta name="keywords" content="nákladní doprava, nadměrný náklad, stavební technika, odtahová služba, Ostrava, Karviná, Dolní Lutyně, logistika, transport">
+    <meta name="author" content="Autodoprava René Sedláček s.r.o.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://autodoprava-sedlacek.cz/">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://autodoprava-sedlacek.cz/">
+    <meta property="og:title" content="Autodoprava René Sedláček s.r.o. | Profesionální logistika">
+    <meta property="og:description" content="Profesionální přeprava nadměrných nákladů a stavební techniky v ČR i zahraničí.">
+    <meta property="og:image" content="https://autodoprava-sedlacek.cz/img/og-image.webp">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configure Tailwind Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        silver: '#E5E7EB',
+                        silverDark: '#9CA3AF',
+                    },
+                    backgroundImage: {
+                        'silver-gradient': 'linear-gradient(135deg, #E5E7EB 0%, #9CA3AF 100%)',
+                        'premium-dark': 'radial-gradient(circle at 50% 0%, #1f2937 0%, #111827 100%)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Autodoprava René Sedláček s.r.o.",
+      "image": "https://autodoprava-sedlacek.cz/img/logo.webp",
+      "telephone": "+420 774 481 918",
+      "email": "info@autodoprava-sedlacek.cz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Na Svahu 1481",
+        "addressLocality": "Dolní Lutyně",
+        "postalCode": "735 53",
+        "addressCountry": "CZ"
+      },
+      "url": "https://autodoprava-sedlacek.cz",
+      "priceRange": "$$",
+      "taxID": "CZ03891801",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Premium Dark Background */
+        .bg-premium-dark {
+            background-color: #111827;
+            background-image: radial-gradient(circle at top center, #1f2937 0%, #030712 100%);
+        }
+
+        /* Nav Active State */
+        .nav-link.active {
+            color: #E5E7EB;
+        }
+
+        /* Floating Button Animation */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(229, 231, 235, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(229, 231, 235, 0); }
+            100% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(229, 231, 235, 0); }
+        }
+        .phone-pulse {
+            animation: pulse-ring 2s infinite;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #666;
+        }
+
+        /* Form Chip Styling */
+        .cargo-radio:checked + label {
+            background-color: #E5E7EB;
+            color: #000;
+            border-color: #9CA3AF;
+        }
+        
+        /* Logo sizing */
+        .logo-desktop {
+             height: 192px; 
+             width: auto;
+             position: relative;
+             top: 50px; 
+             z-index: 60;
+        }
+
+        /* Lightbox styling */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.95);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .lightbox-container {
+            position: relative;
+            width: 90%;
+            height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 101;
+        }
+        .close-lightbox:hover {
+            color: #bbb;
+        }
+
+        /* Lightbox Navigation */
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            padding: 16px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background 0.3s;
+            user-select: none;
+            z-index: 101;
+        }
+        .lightbox-nav:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 20px;
+            color: #ccc;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Gallery Grid Transitions */
+        .gallery-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .gallery-item.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FAQ Styling */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-gray-800 h-[80px] shadow-2xl transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="#home" class="flex items-center hover:scale-105 transition-transform" aria-label="Domů">
+                     <img src="img/logo.webp" alt="Autodoprava René Sedláček Logo" class="hidden md:block logo-desktop" width="250" height="192" loading="eager">
+                     <img src="img/logo.webp" alt="Autodoprava René Sedláček Logo" class="md:hidden h-16 w-auto" width="250" height="64" loading="eager">
+                </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-12">
+                <a href="#about" class="nav-link text-gray-300 hover:text-silver transition-colors font-medium" data-i18n="nav.about">O nás</a>
+                <a href="#services" class="nav-link text-gray-300 hover:text-silver transition-colors font-medium" data-i18n="nav.services">Služby</a>
+                <a href="#fleet" class="nav-link text-gray-300 hover:text-silver transition-colors font-medium" data-i18n="nav.fleet">Vozový park</a>
+                <a href="#faq" class="nav-link text-gray-300 hover:text-silver transition-colors font-medium" data-i18n="faq.title">FAQ</a>
+                <a href="#gallery" class="nav-link text-gray-300 hover:text-silver transition-colors font-medium" data-i18n="gallery.title">Realizace</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-silver transition-colors font-medium" data-i18n="nav.contact">Kontakt</a>
+
+                <!-- Language Switcher -->
+                <div class="relative group h-full flex items-center">
+                    <button class="flex items-center bg-silver-gradient text-black px-3 py-1 rounded-md font-bold hover:opacity-90 transition-all" aria-label="Změnit jazyk">
+                        <span id="current-lang-display">CZ</span>
+                        <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i>
+                    </button>
+                    <!-- Dropdown with padding-top to bridge the gap -->
+                    <div class="absolute right-0 top-full pt-2 w-24 hidden group-hover:block">
+                        <div class="bg-black border border-gray-700 rounded-md shadow-lg overflow-hidden">
+                            <button onclick="changeLanguage('cz')" class="block w-full text-left px-4 py-2 hover:bg-gray-800 hover:text-silver text-sm text-gray-300">Čeština</button>
+                            <button onclick="changeLanguage('pl')" class="block w-full text-left px-4 py-2 hover:bg-gray-800 hover:text-silver text-sm text-gray-300">Polski</button>
+                            <button onclick="changeLanguage('en')" class="block w-full text-left px-4 py-2 hover:bg-gray-800 hover:text-silver text-sm text-gray-300">English</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="Menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-gray-800 absolute w-full left-0 top-[80px]">
+            <div class="flex flex-col p-4 space-y-4">
+                <a href="#about" class="text-gray-300 hover:text-silver p-2" onclick="toggleMobileMenu()" data-i18n="nav.about">O nás</a>
+                <a href="#services" class="text-gray-300 hover:text-silver p-2" onclick="toggleMobileMenu()" data-i18n="nav.services">Služby</a>
+                <a href="#fleet" class="text-gray-300 hover:text-silver p-2" onclick="toggleMobileMenu()" data-i18n="nav.fleet">Vozový park</a>
+                <a href="#faq" class="text-gray-300 hover:text-silver p-2" onclick="toggleMobileMenu()" data-i18n="faq.title">FAQ</a>
+                <a href="#gallery" class="text-gray-300 hover:text-silver p-2" onclick="toggleMobileMenu()" data-i18n="gallery.title">Realizace</a>
+                <a href="#contact" class="text-gray-300 hover:text-silver p-2" onclick="toggleMobileMenu()" data-i18n="nav.contact">Kontakt</a>
+                <div class="pt-2 border-t border-gray-800 flex gap-4">
+                    <button onclick="changeLanguage('cz')" class="px-3 py-1 rounded bg-gray-800 text-gray-300 lang-btn" data-lang="cz">CZ</button>
+                    <button onclick="changeLanguage('pl')" class="px-3 py-1 rounded bg-gray-800 text-gray-300 lang-btn" data-lang="pl">PL</button>
+                    <button onclick="changeLanguage('en')" class="px-3 py-1 rounded bg-gray-800 text-gray-300 lang-btn" data-lang="en">EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floating Call Button -->
+    <a href="tel:+420774481918" class="fixed bottom-6 right-6 z-50 bg-silver-gradient text-black p-4 rounded-full shadow-2xl phone-pulse hover:scale-110 transition-transform md:hidden" aria-label="Zavolat">
+        <i data-lucide="phone" class="w-6 h-6"></i>
+    </a>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen flex flex-col items-center pt-32 bg-gray-900 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <!-- Image kept colorful (removed grayscale/blur) and increased opacity for brightness -->
+                <img src="img/truck-hero.webp" alt="Nákladní automobil na cestě" class="w-full h-full object-cover opacity-90" width="1920" height="1080" fetchpriority="high">
+                
+                <!-- GRADIENTS -->
+                <div class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black/95 via-black/50 to-transparent z-0 pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#111827] via-black/70 to-transparent z-0 pointer-events-none"></div>
+            </div>
+            
+            <!-- Top Content: Headline & Buttons -->
+            <div class="container mx-auto px-4 z-10 text-center relative">
+                <div class="animate-fade-in-up">
+                    <h1 class="text-4xl md:text-7xl font-extrabold mb-8 tracking-tight">
+                        <span class="text-silver drop-shadow-lg" data-i18n="hero.professional">PROFESIONÁLNÍ</span><br />
+                        <span class="text-white drop-shadow-md" data-i18n="hero.transport">NÁKLADNÍ DOPRAVA</span>
+                    </h1>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contact" class="bg-silver-gradient text-black px-8 py-4 rounded-md font-bold text-lg hover:opacity-90 shadow-lg transition-transform hover:-translate-y-1" data-i18n="btn.contact">KONTAKTUJTE NÁS</a>
+                    <a href="#services" class="border-2 border-silver text-silver px-8 py-4 rounded-md font-bold text-lg hover:bg-silver hover:text-black transition-all bg-black/40 backdrop-blur-sm" data-i18n="btn.services">NAŠE SLUŽBY</a>
+                </div>
+            </div>
+
+            <!-- Bottom Content: Description & Insurance -->
+            <div class="absolute bottom-8 left-0 w-full z-10 text-center px-4 pb-4">
+                <p class="text-xl md:text-2xl text-gray-100 mb-6 max-w-3xl mx-auto font-light leading-relaxed drop-shadow-md" data-i18n="hero.desc">
+                    Spolehlivá přeprava zboží v ČR a po celé Evropě. Specializujeme se na nadměrné náklady a stavební techniku.
+                </p>
+
+                <!-- Trust Badge -->
+                <div class="flex justify-center items-center gap-2 text-silver">
+                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    <span class="text-sm md:text-base font-semibold tracking-wide drop-shadow-md" data-i18n="hero.insurance">POJIŠTĚNÍ NÁKLADU DO 3 MIL. KČ (EU)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Bar -->
+        <div class="bg-gray-900 border-y border-gray-800 py-6">
+            <div class="container mx-auto px-4">
+               <div class="flex flex-wrap justify-center md:justify-between items-center gap-8 opacity-60 grayscale">
+                  <div class="flex items-center gap-2"><i data-lucide="award" class="w-6 h-6"></i> <span class="font-bold text-lg">ISO 9001</span></div>
+                  <div class="flex items-center gap-2"><i data-lucide="award" class="w-6 h-6"></i> <span class="font-bold text-lg">GMP+</span></div>
+                  <div class="flex items-center gap-2"><i data-lucide="award" class="w-6 h-6"></i> <span class="font-bold text-lg">AAA RATING</span></div>
+                  <div class="flex items-center gap-2"><i data-lucide="users" class="w-6 h-6"></i> <span class="font-bold text-lg">ČESMAD BOHEMIA</span></div>
+               </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section id="about" class="py-12 md:py-20 bg-premium-dark">
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="about.title">O naší společnosti</h2>
+                    <div class="w-24 h-1.5 bg-silver mx-auto"></div>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2 hover:scale-[1.01] transition-transform duration-300 relative">
+                        <div class="absolute -inset-2 bg-silver/20 rounded-lg blur-lg"></div>
+                        <!-- LAZY LOADED VIDEO -->
+                        <video loop muted playsinline preload="none" class="lazy-video rounded-lg shadow-2xl w-full relative z-10 border border-gray-700 object-cover aspect-video" poster="img/company-about.webp">
+                            <source data-src="img/company-video.mp4" type="video/mp4">
+                            <!-- Fallback Image -->
+                            <img src="img/company-about.webp" alt="Video o společnosti" class="rounded-lg shadow-2xl w-full relative z-10 border border-gray-700">
+                        </video>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <h3 class="text-2xl font-bold mb-6 text-silver" data-i18n="about.company">Autodoprava René Sedláček s.r.o.</h3>
+                        <!-- UPDATED TEXT HERE -->
+                        <p class="text-gray-300 mb-4 leading-relaxed text-lg" data-i18n="about.desc1">
+                            Jsme spolehlivý dopravce se sídlem v Dolní Lutyni, specializující se na nákladní dopravu. Nabízíme přepravu v rámci České republiky i celé Evropy.
+                        </p>
+                        <div class="bg-black/40 p-6 rounded-lg border-l-4 border-silver mb-8">
+                            <div class="flex items-start">
+                                <i data-lucide="shield-check" class="text-silver w-8 h-8 mr-4 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <h4 class="font-bold text-white mb-1" data-i18n="about.insuranceTitle">Pojištění odpovědnosti</h4>
+                                    <p class="text-gray-400 text-sm" data-i18n="about.insuranceDesc">
+                                        Vaše zboží je u nás v bezpečí. Disponujeme pojištěním odpovědnosti dopravce<br>do výše 3 000 000 Kč (EU).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section (UPDATED DESCRIPTIONS) -->
+        <section id="services" class="py-12 md:py-20 bg-black">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="services.title">Naše služby</h2>
+                    <div class="w-24 h-1.5 bg-silver mx-auto"></div>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto" data-i18n="services.subtitle">Komplexní dopravní služby šité na míru vašim potřebám</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service 1 -->
+                    <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-silver hover:shadow-silver-lg transition-all hover:-translate-y-2 group flex flex-col h-full">
+                        <div class="bg-white/5 p-4 rounded-full w-20 h-20 flex items-center justify-center mb-6 mx-auto group-hover:bg-silver group-hover:text-black transition-colors">
+                            <i data-lucide="truck" class="text-silver w-10 h-10 group-hover:text-black"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-center group-hover:text-silver transition-colors" data-i18n="services.freight">Nákladní doprava</h3>
+                        <p class="text-gray-400 text-sm text-center flex-grow" data-i18n="services.freight.desc">Komplexní logistická řešení pro paletové i celovozové zásilky (FTL/LTL) s důrazem na flexibilitu.</p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-silver hover:shadow-silver-lg transition-all hover:-translate-y-2 group flex flex-col h-full">
+                        <div class="bg-white/5 p-4 rounded-full w-20 h-20 flex items-center justify-center mb-6 mx-auto group-hover:bg-silver group-hover:text-black transition-colors">
+                            <i data-lucide="move-3d" class="text-silver w-10 h-10 group-hover:text-black"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-center group-hover:text-silver transition-colors" data-i18n="services.oversize">Nadměrné náklady</h3>
+                        <p class="text-gray-400 text-sm text-center flex-grow" data-i18n="services.oversize.desc">Expertní transport nadrozměrných nákladů, včetně zajištění trasování, povolení a doprovodných vozidel.</p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-silver hover:shadow-silver-lg transition-all hover:-translate-y-2 group flex flex-col h-full">
+                         <div class="bg-white/5 p-4 rounded-full w-20 h-20 flex items-center justify-center mb-6 mx-auto group-hover:bg-silver group-hover:text-black transition-colors">
+                            <i data-lucide="construction" class="text-silver w-10 h-10 group-hover:text-black"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-center group-hover:text-silver transition-colors" data-i18n="services.machinery">Stavební technika</h3>
+                        <p class="text-gray-400 text-sm text-center flex-grow" data-i18n="services.machinery.desc">Profesionální přeprava bagrů, těžké mechanizace a zemědělských strojů na podvalnících.</p>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-silver hover:shadow-silver-lg transition-all hover:-translate-y-2 group flex flex-col h-full">
+                        <div class="bg-white/5 p-4 rounded-full w-20 h-20 flex items-center justify-center mb-6 mx-auto group-hover:bg-silver group-hover:text-black transition-colors">
+                            <i data-lucide="warehouse" class="text-silver w-10 h-10 group-hover:text-black"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-center group-hover:text-silver transition-colors" data-i18n="services.bulk">Sypké materiály</h3>
+                        <p class="text-gray-400 text-sm text-center flex-grow" data-i18n="services.bulk.desc">Velkokapacitní přeprava štěrků, písků a jiných sypkých hmot sklápěcími vozy přímo na stavbu.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fleet Section -->
+        <section id="fleet" class="py-12 md:py-20 bg-premium-dark">
+            <div class="container mx-auto px-4 z-10 relative">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="fleet.title">Náš vozový park</h2>
+                    <div class="w-24 h-1.5 bg-silver mx-auto"></div>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto" data-i18n="fleet.subtitle">Moderní a spolehlivá vozidla pro všechny typy přepravy</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Vehicle 1 -->
+                    <div class="bg-black p-6 rounded-lg border border-gray-800 hover:border-silver hover:shadow-silver-lg transition-all-smooth hover:scale-[1.02]">
+                        <img src="img/lowbed-trailer.webp" alt="Podvalník" class="w-full h-48 object-cover rounded mb-4 transition-all duration-500" loading="lazy">
+                        <h3 class="text-xl font-bold mb-2" data-i18n="fleet.v1.title">Podvalníková souprava</h3>
+                        <ul class="text-gray-400 space-y-2 text-sm">
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="text-silver mr-2 mt-0.5 flex-shrink-0 w-4 h-4"></i>
+                                <span data-i18n="fleet.v1.f1">Hydraulické nájezdy</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="text-silver mr-2 mt-0.5 flex-shrink-0 w-4 h-4"></i>
+                                <span data-i18n="fleet.v1.f2">Rozšíření až na 3 metry</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="text-silver mr-2 mt-0.5 flex-shrink-0 w-4 h-4"></i>
+                                <span data-i18n="fleet.v1.f3">Integrovaný naviják</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Vehicle 2 -->
+                    <div class="bg-black p-6 rounded-lg border border-gray-800 hover:border-silver hover:shadow-silver-lg transition-all-smooth hover:scale-[1.02]">
+                        <img src="img/recovery-truck.webp" alt="Odtahové vozidlo" class="w-full h-48 object-cover rounded mb-4 transition-all duration-500" loading="lazy">
+                        <h3 class="text-xl font-bold mb-2" data-i18n="fleet.v2.title">Odtahové vozidlo</h3>
+                        <ul class="text-gray-400 space-y-2 text-sm">
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="text-silver mr-2 mt-0.5 flex-shrink-0 w-4 h-4"></i>
+                                <span data-i18n="fleet.v2.f1">Hydraulická ruka</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="text-silver mr-2 mt-0.5 flex-shrink-0 w-4 h-4"></i>
+                                <span data-i18n="fleet.v2.f2">Hydraulický naviják</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="text-silver mr-2 mt-0.5 flex-shrink-0 w-4 h-4"></i>
+                                <span data-i18n="fleet.v2.f3">Pro nepojízdné stroje</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Vehicle 3 -->
+                    <div class="bg-black p-6 rounded-lg border border-gray-800 hover:border-silver hover:shadow-silver-lg transition-all-smooth hover:scale-[1.02]">
+                        <img src="img/container-truck.webp" alt="Kontejnerové vozidlo" class="w-full h-48 object-cover rounded mb-4 transition-all duration-500" loading="lazy">
+                        <h3 class="text-xl font-bold mb-2" data-i18n="fleet.v3.title">Kontejnerové vozidlo</h3>
+                        <ul class="text-gray-400 space-y-2 text-sm">
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="text-silver mr-2 mt-0.5 flex-shrink-0 w-4 h-4"></i>
+                                <span data-i18n="fleet.v3.f1">Pro stroje a sypké materiály</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="text-silver mr-2 mt-0.5 flex-shrink-0 w-4 h-4"></i>
+                                <span data-i18n="fleet.v3.f2">Nakládka přímo na místě</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Vehicle 4 -->
+                    <div class="bg-black p-6 rounded-lg border border-gray-800 hover:border-silver hover:shadow-silver-lg transition-all-smooth hover:scale-[1.02]">
+                        <img src="img/hydraulic-trailer.webp" alt="Hydraulický přívěs" class="w-full h-48 object-cover rounded mb-4 transition-all duration-500" loading="lazy">
+                        <h3 class="text-xl font-bold mb-2" data-i18n="fleet.v4.title">Hydraulický přívěs</h3>
+                        <ul class="text-gray-400 space-y-2 text-sm">
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="text-silver mr-2 mt-0.5 flex-shrink-0 w-4 h-4"></i>
+                                <span data-i18n="fleet.v4.f1">Pro specifické náklady</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="text-silver mr-2 mt-0.5 flex-shrink-0 w-4 h-4"></i>
+                                <span data-i18n="fleet.v4.f2">Rozšiřuje možnosti přepravy</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Vehicle 5: Odtahovka -->
+                    <div class="bg-black p-6 rounded-lg border border-gray-800 hover:border-silver hover:shadow-silver-lg transition-all-smooth hover:scale-[1.02]">
+                        <img src="img/odtahovka.webp" alt="Odtahový speciál" class="w-full h-48 object-cover rounded mb-4 transition-all duration-500" loading="lazy">
+                        <h3 class="text-xl font-bold mb-2" data-i18n="fleet.v5.title">Odtahový speciál</h3>
+                        <ul class="text-gray-400 space-y-2 text-sm">
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="text-silver mr-2 mt-0.5 flex-shrink-0 w-4 h-4"></i>
+                                <span data-i18n="fleet.v5.f1">Unikátní nájezdy k rampě</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="text-silver mr-2 mt-0.5 flex-shrink-0 w-4 h-4"></i>
+                                <span data-i18n="fleet.v5.f2">Nakládka přímo do haly</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="text-silver mr-2 mt-0.5 flex-shrink-0 w-4 h-4"></i>
+                                <span data-i18n="fleet.v5.f3">Non-stop asistence</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Vehicle 6: MAN Red Curtain -->
+                    <div class="bg-black p-6 rounded-lg border border-gray-800 hover:border-silver hover:shadow-silver-lg transition-all-smooth hover:scale-[1.02]">
+                        <img src="img/man-plachta.webp" alt="MAN Plachtová souprava" class="w-full h-48 object-cover rounded mb-4 transition-all duration-500" loading="lazy">
+                        <h3 class="text-xl font-bold mb-2" data-i18n="fleet.v6.title">Plachtová souprava MAN</h3>
+                        <ul class="text-gray-400 space-y-2 text-sm">
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="text-silver mr-2 mt-0.5 flex-shrink-0 w-4 h-4"></i>
+                                <span data-i18n="fleet.v6.f1">Velkoobjemová přeprava</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="text-silver mr-2 mt-0.5 flex-shrink-0 w-4 h-4"></i>
+                                <span data-i18n="fleet.v6.f2">Boční i horní nakládka</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="text-silver mr-2 mt-0.5 flex-shrink-0 w-4 h-4"></i>
+                                <span data-i18n="fleet.v6.f3">Mezinárodní transport</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section (MOVED UP) -->
+        <section id="faq" class="py-12 md:py-20 bg-black">
+             <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="faq.title">Časté dotazy</h2>
+                    <div class="w-24 h-1.5 bg-silver mx-auto"></div>
+                </div>
+
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <details class="group bg-black border border-gray-800 rounded-lg p-6 [&_summary::-webkit-details-marker]:hidden open:border-silver">
+                        <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-100">
+                            <h3 class="font-bold text-lg" data-i18n="faq.q1">Jak rychle dokážete přistavit vozidlo?</h3>
+                            <div class="group-open:-rotate-180 transition-transform duration-300">
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-silver"></i>
+                            </div>
+                        </summary>
+                        <p class="mt-4 leading-relaxed text-gray-400" data-i18n="faq.a1">
+                            Vždy záleží na aktuální vytíženosti, ale díky našemu non-stop dispečinku se snažíme reagovat okamžitě. V urgentních případech jsme schopni vyrazit v řádu hodin.
+                        </p>
+                    </details>
+
+                    <!-- FAQ Item 2 -->
+                    <details class="group bg-black border border-gray-800 rounded-lg p-6 [&_summary::-webkit-details-marker]:hidden open:border-silver">
+                        <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-100">
+                            <h3 class="font-bold text-lg" data-i18n="faq.q2">Zajišťujete povolení pro nadrozměrné náklady?</h3>
+                            <div class="group-open:-rotate-180 transition-transform duration-300">
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-silver"></i>
+                            </div>
+                        </summary>
+                        <p class="mt-4 leading-relaxed text-gray-400" data-i18n="faq.a2">
+                            Ano, zajišťujeme kompletní servis včetně vyřízení veškerých potřebných povolení pro přepravu nadrozměrných nákladů v ČR i v zahraničí.
+                        </p>
+                    </details>
+
+                    <!-- FAQ Item 3 -->
+                    <details class="group bg-black border border-gray-800 rounded-lg p-6 [&_summary::-webkit-details-marker]:hidden open:border-silver">
+                        <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-100">
+                            <h3 class="font-bold text-lg" data-i18n="faq.q3">Lze nakládat i o víkendech?</h3>
+                            <div class="group-open:-rotate-180 transition-transform duration-300">
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-silver"></i>
+                            </div>
+                        </summary>
+                        <p class="mt-4 leading-relaxed text-gray-400" data-i18n="faq.a3">
+                            Ano, naše služby poskytujeme 24 hodin denně, 7 dní v týdnu. Víkendové nakládky nebo přepravy jsou pro nás standardem.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section (MOVED DOWN) -->
+        <section id="gallery" class="py-12 md:py-20 bg-premium-dark">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="gallery.title">Z našich realizací</h2>
+                    <div class="w-24 h-1.5 bg-silver mx-auto"></div>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto" data-i18n="gallery.subtitle">Podívejte se na ukázky naší práce v terénu.</p>
+                </div>
+
+                <!-- Gallery Grid Container -->
+                <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                    <!-- Javascript will populate this -->
+                </div>
+
+                <!-- Pagination Container -->
+                <div id="gallery-pagination" class="flex justify-center mt-10 gap-2 flex-wrap">
+                    <!-- Javascript will populate this -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-black">
+            <div class="container mx-auto px-4">
+                <!-- Header -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="contact.title">Kontaktujte nás</h2>
+                    <div class="w-24 h-1.5 bg-silver mx-auto"></div>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-lg" data-i18n="contact.subtitle">Potřebujete přepravit náklad? Jsme tu pro vás 24/7.</p>
+                </div>
+
+                <!-- Main Content Wrapper -->
+                <div class="max-w-4xl mx-auto">
+                    <!-- Dispatch Highlight Card -->
+                    <div class="bg-silver-gradient p-1 rounded-2xl shadow-2xl mb-12 transform hover:scale-[1.02] transition-transform duration-300 group">
+                        <div class="bg-gray-900 rounded-xl p-10 text-center h-full flex flex-col items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-silver/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            
+                            <div class="bg-white/10 p-5 rounded-full mb-6">
+                                <i data-lucide="phone-call" class="w-12 h-12 text-silver animate-pulse"></i>
+                            </div>
+                            
+                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 tracking-wider" data-i18n="contact.dispatch">DISPEČINK NON-STOP</h3>
+                            
+                            <a href="tel:+420774481918" class="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-silver to-white hover:text-silver-dark transition-all py-2 block">
+                                +420 774 481 918
+                            </a>
+                            
+                            <p class="text-gray-400 mt-6 text-lg font-light">
+                                <span class="inline-block w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
+                                Jsme na příjmu 24 hodin denně, 7 dní v týdnu.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Secondary Info Grid -->
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Email -->
+                        <a href="mailto:info@autodoprava-sedlacek.cz" class="bg-gray-900 p-8 rounded-xl border border-gray-800 text-center hover:border-silver transition-colors group block">
+                            <div class="bg-white/5 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4 mx-auto group-hover:bg-silver group-hover:text-black transition-colors">
+                                <i data-lucide="mail" class="text-silver w-8 h-8 group-hover:text-black"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-white">Email</h3>
+                            <p class="text-gray-400 group-hover:text-silver transition-colors">info@autodoprava-sedlacek.cz</p>
+                        </a>
+
+                        <!-- Address -->
+                        <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 text-center hover:border-silver transition-colors group">
+                            <div class="bg-white/5 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4 mx-auto group-hover:bg-silver group-hover:text-black transition-colors">
+                                <i data-lucide="map-pin" class="text-silver w-8 h-8 group-hover:text-black"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-white" data-i18n="contact.hq">Sídlo společnosti</h3>
+                            <p class="text-gray-400">Na Svahu 1481<br>735 53 Dolní Lutyně<br>Česká republika</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 bg-premium-dark border-t border-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="mb-4 md:mb-0 text-center md:text-left">
+                        <div class="text-2xl font-bold text-silver tracking-wider">AUTODOPRAVA</div>
+                        <div class="text-2xl font-bold text-white tracking-widest">RENÉ SEDLÁČEK s.r.o.</div>
+                        <p class="text-gray-500 text-sm mt-2 max-w-xs" data-i18n="footer.since">Spolehlivý partner v logistice od roku 2005.</p>
+                    </div>
+                    
+                    <div class="text-gray-400 text-sm text-center md:text-right">
+                        <p>© <span id="year"></span> <span data-i18n="footer.rights">Všechna práva vyhrazena</span></p>
+                        <p class="mt-1 font-mono text-gray-500">IČO: 03891801 | DIČ: CZ03891801</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Updated Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        
+        <!-- Navigation Arrows -->
+        <div class="lightbox-nav lightbox-prev" onclick="changeLightboxImage(-1)">
+            <i data-lucide="chevron-left" class="w-8 h-8"></i>
+        </div>
+        
+        <div class="lightbox-container">
+            <img class="lightbox-content" id="lightbox-img" alt="Gallery preview">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+
+        <div class="lightbox-nav lightbox-next" onclick="changeLightboxImage(1)">
+            <i data-lucide="chevron-right" class="w-8 h-8"></i>
+        </div>
+    </div>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // 1. Initialize Icons
+        lucide.createIcons();
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // ----------------------------------------------------
+        // DYNAMIC GALLERY LOGIC
+        // ----------------------------------------------------
+        
+        // CONFIGURATION: Set the total number of images you have in the 'gallery/' folder
+        // Images must be named 1.jpeg, 2.jpeg, 3.jpeg ... up to TOTAL_GALLERY_IMAGES.
+        const TOTAL_GALLERY_IMAGES = 29; 
+        const IMAGES_PER_PAGE = 12; // 6 cols * 2 rows
+        const GALLERY_PATH = 'gallery/';
+        const FILE_EXTENSION = '.jpeg';
+
+        let currentGalleryPage = 1;
+        let currentLightboxIndex = 1; // Tracks which image # is currently open
+
+        function initGallery() {
+            renderGalleryGrid(1);
+            renderPagination();
+        }
+
+        function renderGalleryGrid(page) {
+            currentGalleryPage = page;
+            const grid = document.getElementById('gallery-grid');
+            grid.innerHTML = ''; // Clear current
+            
+            const start = (page - 1) * IMAGES_PER_PAGE + 1;
+            const end = Math.min(page * IMAGES_PER_PAGE, TOTAL_GALLERY_IMAGES);
+
+            for (let i = start; i <= end; i++) {
+                // Determine layout classes (responsive)
+                // We want 6 columns on large screens. Tailwind grid-cols-6 handles the layout.
+                // We just need the div container.
+                const div = document.createElement('div');
+                div.className = "gallery-item relative group overflow-hidden rounded-lg cursor-pointer h-48 border border-gray-800 bg-gray-900";
+                div.onclick = function() { openLightboxIndex(i); };
+
+                // Lazy Image Construction
+                // We use data-src instead of src. The IntersectionObserver will swap them.
+                const imgPath = `${GALLERY_PATH}${i}${FILE_EXTENSION}`;
+                
+                div.innerHTML = `
+                    <img data-src="${imgPath}" alt="Realizace ${i}" class="lazy-gallery-img w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-0 transition-opacity">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8"></i>
+                    </div>
+                `;
+                
+                grid.appendChild(div);
+            }
+            
+            // Re-initialize icons for the new elements
+            lucide.createIcons();
+            
+            // Observe new images for lazy loading
+            observeGalleryImages();
+        }
+
+        function renderPagination() {
+            const container = document.getElementById('gallery-pagination');
+            const totalPages = Math.ceil(TOTAL_GALLERY_IMAGES / IMAGES_PER_PAGE);
+            
+            if (totalPages <= 1) {
+                container.style.display = 'none';
+                return;
+            }
+
+            container.innerHTML = '';
+            
+            for (let i = 1; i <= totalPages; i++) {
+                const btn = document.createElement('button');
+                btn.textContent = i;
+                btn.className = `px-4 py-2 rounded font-bold transition-colors ${i === currentGalleryPage ? 'bg-silver text-black' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`;
+                btn.onclick = function() { 
+                    renderGalleryGrid(i);
+                    // Update buttons active state logic (simplified re-render)
+                    renderPagination();
+                };
+                container.appendChild(btn);
+            }
+        }
+
+        // Lazy Loading Observer for Gallery
+        function observeGalleryImages() {
+            const images = document.querySelectorAll('img.lazy-gallery-img');
+            
+            if ("IntersectionObserver" in window) {
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            img.onload = () => {
+                                img.classList.remove('opacity-0');
+                                img.closest('.gallery-item').classList.add('loaded');
+                            };
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+
+                images.forEach(img => observer.observe(img));
+            } else {
+                // Fallback for very old browsers
+                images.forEach(img => {
+                    img.src = img.dataset.src;
+                    img.classList.remove('opacity-0');
+                });
+            }
+        }
+
+        // ----------------------------------------------------
+        // LIGHTBOX LOGIC
+        // ----------------------------------------------------
+
+        function openLightboxIndex(index) {
+            currentLightboxIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            updateLightboxContent();
+            lightbox.style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightboxImage(direction) {
+            // Calculate new index
+            let newIndex = currentLightboxIndex + direction;
+            
+            // Loop or stop? Let's loop.
+            if (newIndex > TOTAL_GALLERY_IMAGES) newIndex = 1;
+            if (newIndex < 1) newIndex = TOTAL_GALLERY_IMAGES;
+            
+            currentLightboxIndex = newIndex;
+            updateLightboxContent();
+        }
+
+        function updateLightboxContent() {
+            const imgPath = `${GALLERY_PATH}${currentLightboxIndex}${FILE_EXTENSION}`;
+            const imgEl = document.getElementById('lightbox-img');
+            const captionEl = document.getElementById('lightbox-caption');
+            
+            // Optional: Add loading state styling here if needed
+            imgEl.style.opacity = '0.5';
+            imgEl.src = imgPath;
+            imgEl.onload = () => { imgEl.style.opacity = '1'; };
+            
+            captionEl.textContent = `Obrázek ${currentLightboxIndex} z ${TOTAL_GALLERY_IMAGES}`;
+        }
+
+        // Keyboard navigation for Lightbox
+        document.addEventListener('keydown', function(e) {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox.style.display === 'flex') {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') changeLightboxImage(-1);
+                if (e.key === 'ArrowRight') changeLightboxImage(1);
+            }
+        });
+
+        // Initialize Gallery on Load
+        document.addEventListener('DOMContentLoaded', initGallery);
+
+
+        // ----------------------------------------------------
+        // EXISTING SITE LOGIC
+        // ----------------------------------------------------
+
+        // 6. Lazy Load Video (Existing)
+        document.addEventListener("DOMContentLoaded", function() {
+            var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy-video"));
+
+            if ("IntersectionObserver" in window) {
+                var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(video) {
+                        if (video.isIntersecting) {
+                            for (var source in video.target.children) {
+                                var videoSource = video.target.children[source];
+                                if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                                    videoSource.src = videoSource.dataset.src;
+                                }
+                            }
+
+                            video.target.load();
+                            video.target.play().catch(function(error) {
+                                console.log("Autoplay prevented or failed:", error);
+                            });
+                            video.target.classList.remove("lazy-video");
+                            lazyVideoObserver.unobserve(video.target);
+                        }
+                    });
+                });
+
+                lazyVideos.forEach(function(lazyVideo) {
+                    lazyVideoObserver.observe(lazyVideo);
+                });
+            }
+        });
+
+        // 2. Translations
+        const translations = {
+            cz: {
+                'nav.about': 'O nás', 'nav.services': 'Služby', 'nav.fleet': 'Vozový park', 'nav.contact': 'Kontakt',
+                'hero.professional': 'PROFESIONÁLNÍ', 'hero.transport': 'NÁKLADNÍ DOPRAVA',
+                'hero.desc': 'Spolehlivá přeprava zboží v ČR a po celé Evropě. Specializujeme se na nadměrné náklady a stavební techniku.',
+                'hero.insurance': 'POJIŠTĚNÍ NÁKLADU DO 3 MIL. KČ (EU)',
+                'btn.contact': 'KONTAKTUJTE NÁS', 'btn.services': 'NAŠE SLUŽBY',
+                'about.title': 'O naší společnosti', 'about.company': 'Autodoprava René Sedláček s.r.o.',
+                // Fixed text
+                'about.desc1': 'Jsme spolehlivý dopravce se sídlem v Dolní Lutyni, specializující se na nákladní dopravu. Nabízíme přepravu v rámci České republiky i celé Evropy.',
+                'about.insuranceTitle': 'Pojištění odpovědnosti', 'about.insuranceDesc': 'Vaše zboží je u nás v bezpečí. Disponujeme pojištěním odpovědnosti dopravce<br>do výše 3 000 000 Kč (EU).',
+                'services.title': 'Naše služby', 'services.subtitle': 'Komplexní dopravní služby šité na míru vašim potřebám',
+                'services.freight': 'Nákladní doprava', 'services.oversize': 'Nadměrné náklady', 'services.machinery': 'Stavební technika', 'services.bulk': 'Sypké materiály',
+                // New service descriptions CZ
+                'services.freight.desc': 'Komplexní logistická řešení pro paletové i celovozové zásilky (FTL/LTL) s důrazem na flexibilitu.',
+                'services.oversize.desc': 'Expertní transport nadrozměrných nákladů, včetně zajištění trasování, povolení a doprovodných vozidel.',
+                'services.machinery.desc': 'Profesionální přeprava bagrů, těžké mechanizace a zemědělských strojů na podvalnících.',
+                'services.bulk.desc': 'Velkokapacitní přeprava štěrků, písků a jiných sypkých hmot sklápěcími vozy přímo na stavbu.',
+                
+                'contact.title': 'Kontaktujte nás', 
+                'contact.subtitle': 'Potřebujete přepravit náklad? Jsme tu pro vás 24/7.',
+                'contact.dispatch': 'DISPEČINK NON-STOP', 
+                'contact.hq': 'Sídlo společnosti',
+                
+                'footer.since': 'Spolehlivý partner v logistice od roku 2005.', 'footer.rights': 'Všechna práva vyhrazena',
+                // Fleet translations
+                'fleet.title': 'Náš vozový park', 'fleet.subtitle': 'Moderní a spolehlivá vozidla pro všechny typy přepravy',
+                'fleet.v1.title': 'Podvalníková souprava', 'fleet.v1.f1': 'Hydraulické nájezdy', 'fleet.v1.f2': 'Rozšíření až na 3 metry', 'fleet.v1.f3': 'Integrovaný naviják',
+                'fleet.v2.title': 'Odtahové vozidlo', 'fleet.v2.f1': 'Hydraulická ruka', 'fleet.v2.f2': 'Hydraulický naviják', 'fleet.v2.f3': 'Pro nepojízdné stroje',
+                'fleet.v3.title': 'Kontejnerové vozidlo', 'fleet.v3.f1': 'Pro stroje a sypké materiály', 'fleet.v3.f2': 'Nakládka přímo na místě',
+                'fleet.v4.title': 'Hydraulický přívěs', 'fleet.v4.f1': 'Pro specifické náklady', 'fleet.v4.f2': 'Rozšiřuje možnosti přepravy',
+                // NEW VEHICLES
+                'fleet.v5.title': 'Odtahový speciál', 'fleet.v5.f1': 'Unikátní nájezdy k rampě', 'fleet.v5.f2': 'Nakládka přímo do haly', 'fleet.v5.f3': 'Non-stop asistence',
+                'fleet.v6.title': 'Plachtová souprava MAN', 'fleet.v6.f1': 'Velkoobjemová přeprava', 'fleet.v6.f2': 'Boční i horní nakládka', 'fleet.v6.f3': 'Mezinárodní transport',
+                // Gallery & FAQ
+                'gallery.title': 'Z našich realizací', 'gallery.subtitle': 'Podívejte se na ukázky naší práce v terénu.',
+                'faq.title': 'Časté dotazy',
+                'faq.q1': 'Jak rychle dokážete přistavit vozidlo?', 'faq.a1': 'Vždy záleží na aktuální vytíženosti, ale díky našemu non-stop dispečinku se snažíme reagovat okamžitě. V urgentních případech jsme schopni vyrazit v řádu hodin.',
+                'faq.q2': 'Zajišťujete povolení pro nadrozměrné náklady?', 'faq.a2': 'Ano, zajišťujeme kompletní servis včetně vyřízení veškerých potřebných povolení pro přepravu nadrozměrných nákladů v ČR i v zahraničí.',
+                'faq.q3': 'Lze nakládat i o víkendech?', 'faq.a3': 'Ano, naše služby poskytujeme 24 hodin denně, 7 dní v týdnu. Víkendové nakládky nebo přepravy jsou pro nás standardem.'
+            },
+            pl: {
+                'nav.about': 'O nas', 'nav.services': 'Usługi', 'nav.fleet': 'Flota', 'nav.contact': 'Kontakt',
+                'hero.professional': 'PROFESJONALNY', 'hero.transport': 'TRANSPORT CIĘŻAROWY',
+                'hero.desc': 'Niezawodny transport towarów w Czechach i całej Europie. Specjalizujemy się w ładunkach ponadnormatywnych.',
+                'hero.insurance': 'UBEZPIECZENIE ŁADUNKU DO 3 MLN CZK (UE)',
+                'btn.contact': 'SKONTAKTUJ SIĘ', 'btn.services': 'NASZE USŁUGI',
+                'about.title': 'O naszej firmie', 'about.company': 'Transport René Sedláček s.r.o.',
+                'about.desc1': 'Jesteśmy niezawodnym przewoźnikiem z siedzibą w Dolní Lutyně, specjalizującym się w drogowym transporcie towarowym.',
+                'about.insuranceTitle': 'Ubezpieczenie OC', 'about.insuranceDesc': 'Twoje towary są bezpieczne. Posiadamy ubezpieczenie<br>do 3 mln CZK (UE).',
+                'services.title': 'Nasze usługi', 'services.subtitle': 'Kompleksowe usługi transportowe dostosowane do Twoich potrzeb',
+                'services.freight': 'Transport towarowy', 'services.oversize': 'Ładunki ponadnormatywne', 'services.machinery': 'Maszyny budowlane', 'services.bulk': 'Materiały sypkie',
+                // New service descriptions PL
+                'services.freight.desc': 'Kompleksowe rozwiązania logistyczne dla przesyłek paletowych i całopojazdowych (FTL/LTL) z naciskiem na elastyczność.',
+                'services.oversize.desc': 'Ekspercki transport ładunków ponadgabarytowych, w tym wyznaczanie tras, zezwolenia i pojazdy pilotujące.',
+                'services.machinery.desc': 'Profesjonalny transport koparek, ciężkiego sprzętu i maszyn rolniczych na naczepach niskopodwoziowych.',
+                'services.bulk.desc': 'Transport materiałów sypkich, żwiru i piasku wywrotkami o dużej pojemności bezpośrednio na plac budowy.',
+                
+                'contact.title': 'Skontaktuj się z nami', 
+                'contact.subtitle': 'Potrzebujesz transportu? Jesteśmy tu dla Ciebie 24/7.',
+                'contact.dispatch': 'DYSPOZYTORNIA 24/7', 
+                'contact.hq': 'Siedziba firmy',
+                
+                'footer.since': 'Niezawodny partner w logistyce od 2005 roku.', 'footer.rights': 'Wszelkie prawa zastrzeżone',
+                'fleet.title': 'Nasza flota', 'fleet.subtitle': 'Nowoczesne i niezawodne pojazdy do każdego rodzaju transportu',
+                'fleet.v1.title': 'Naczepa niskopodwoziowa', 'fleet.v1.f1': 'Zjazdy hydrauliczne', 'fleet.v1.f2': 'Rozszerzenie do 3 metrów', 'fleet.v1.f3': 'Zintegrowana wciągarka',
+                'fleet.v2.title': 'Pomoc drogowa', 'fleet.v2.f1': 'Ramię hydrauliczne', 'fleet.v2.f2': 'Wciągarka hydrauliczna', 'fleet.v2.f3': 'Dla maszyn nieruchomych',
+                'fleet.v3.title': 'Pojazd kontenerowy', 'fleet.v3.f1': 'Do maszyn i materiałów sypkich', 'fleet.v3.f2': 'Załadunek na miejscu',
+                'fleet.v4.title': 'Przyczepa hydrauliczna', 'fleet.v4.f1': 'Do ładunków specjalnych', 'fleet.v4.f2': 'Rozszerza możliwości transportu',
+                'fleet.v5.title': 'Laweta Specjalna', 'fleet.v5.f1': 'Unikalne rampy najazdowe', 'fleet.v5.f2': 'Załadunek bezpośrednio do hali', 'fleet.v5.f3': 'Pomoc 24/7',
+                'fleet.v6.title': 'Zestaw MAN Plandeka', 'fleet.v6.f1': 'Transport wielkogabarytowy', 'fleet.v6.f2': 'Załadunek boczny/górny', 'fleet.v6.f3': 'Transport międzynarodowy',
+                'gallery.title': 'Nasze realizacje', 'gallery.subtitle': 'Zobacz przykłady naszej pracy.',
+                'faq.title': 'Częste pytania',
+                'faq.q1': 'Jak szybko możecie podstawić pojazd?', 'faq.a1': 'Staramy się reagować natychmiast.',
+                'faq.q2': 'Czy załatwiacie pozwolenia na ponadgabaryty?', 'faq.a2': 'Tak, zapewniamy pełną obsługę.',
+                'faq.q3': 'Czy pracujecie w weekendy?', 'faq.a3': 'Tak, pracujemy 24/7.'
+            },
+            en: {
+                'nav.about': 'About', 'nav.services': 'Services', 'nav.fleet': 'Fleet', 'nav.contact': 'Contact',
+                'hero.professional': 'PROFESSIONAL', 'hero.transport': 'TRUCKING SERVICES',
+                'hero.desc': 'Reliable cargo transport in Czech Republic and across Europe. We specialize in oversized loads.',
+                'hero.insurance': 'CARGO INSURANCE UP TO 3M CZK (EU)',
+                'btn.contact': 'CONTACT US', 'btn.services': 'OUR SERVICES',
+                'about.title': 'About Company', 'about.company': 'René Sedláček Transport s.r.o.',
+                'about.desc1': 'We are a reliable transport company based in Dolní Lutyně, specializing in road freight transport.',
+                'about.insuranceTitle': 'Liability Insurance', 'about.insuranceDesc': 'Your goods are safe. We have carrier liability insurance<br>up to 3M CZK (EU).',
+                'services.title': 'Our Services', 'services.subtitle': 'Comprehensive transport services tailored to your needs',
+                'services.freight': 'Freight Transport', 'services.oversize': 'Oversized Loads', 'services.machinery': 'Construction Machinery', 'services.bulk': 'Bulk Materials',
+                // New service descriptions EN
+                'services.freight.desc': 'Comprehensive logistics solutions for palletized and full truckload shipments (FTL/LTL) with a focus on flexibility.',
+                'services.oversize.desc': 'Expert transport of oversized loads, including route planning, permits, and escort vehicles.',
+                'services.machinery.desc': 'Professional transport of excavators, heavy machinery, and agricultural equipment on lowbed trailers.',
+                'services.bulk.desc': 'High-capacity transport of gravel, sand, and other bulk materials using tipper trucks directly to the site.',
+                
+                'contact.title': 'Contact Us', 
+                'contact.subtitle': 'Need to transport cargo? We are here for you 24/7.',
+                'contact.dispatch': 'DISPATCH 24/7', 
+                'contact.hq': 'Headquarters',
+                
+                'footer.since': 'Reliable logistics partner since 2005.', 'footer.rights': 'All rights reserved',
+                'fleet.title': 'Our Fleet', 'fleet.subtitle': 'Modern and reliable vehicles for all types of transport',
+                'fleet.v1.title': 'Lowbed trailer', 'fleet.v1.f1': 'Hydraulic ramps', 'fleet.v1.f2': 'Extension up to 3 meters', 'fleet.v1.f3': 'Integrated winch',
+                'fleet.v2.title': 'Recovery Truck', 'fleet.v2.f1': 'Hydraulic arm', 'fleet.v2.f2': 'Hydraulic winch', 'fleet.v2.f3': 'For non-running machines',
+                'fleet.v3.title': 'Container vehicle', 'fleet.v3.f1': 'For machines and bulk materials', 'fleet.v3.f2': 'Loading on site',
+                'fleet.v4.title': 'Hydraulic trailer', 'fleet.v4.f1': 'For special loads', 'fleet.v4.f2': 'Expands transport options',
+                'fleet.v5.title': 'Special Tow Truck', 'fleet.v5.f1': 'Unique ramp access', 'fleet.v5.f2': 'Loading directly into hall', 'fleet.v5.f3': '24/7 Assistance',
+                'fleet.v6.title': 'MAN Curtainside', 'fleet.v6.f1': 'High volume transport', 'fleet.v6.f2': 'Side/Top loading', 'fleet.v6.f3': 'International transport',
+                'gallery.title': 'Our Projects', 'gallery.subtitle': 'See examples of our work in the field.',
+                'faq.title': 'FAQ',
+                'faq.q1': 'How fast can you provide a vehicle?', 'faq.a1': 'We try to react immediately.',
+                'faq.q2': 'Do you handle permits for oversized cargo?', 'faq.a2': 'Yes, we handle all necessary permits.',
+                'faq.q3': 'Do you work on weekends?', 'faq.a3': 'Yes, we operate 24/7.'
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    // Changed textContent to innerHTML to support <br> tags
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            document.getElementById('current-lang-display').textContent = lang.toUpperCase();
+            
+            // Update active state on mobile lang buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if(btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('bg-silver-gradient', 'text-black');
+                    btn.classList.remove('bg-gray-800', 'text-gray-300');
+                } else {
+                    btn.classList.remove('bg-silver-gradient', 'text-black');
+                    btn.classList.add('bg-gray-800', 'text-gray-300');
+                }
+            });
+        }
+
+        // 3. Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+
+        // 4. Form Handling removed
+
+        // 5. Navbar Scroll Effect & Active Link
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+
+            // Active link highlighting
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-silver');
+                link.classList.add('text-gray-300');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('text-silver');
+                    link.classList.remove('text-gray-300');
+                }
+            });
+        });
+
+        // Set initial active state for CZ buttons
+        changeLanguage('cz');
+    </script>
+</body>
+</html>
