@@ -19,7 +19,11 @@
     <meta property="og:description" content="Profesionální přeprava nadměrných nákladů a stavební techniky v ČR i zahraničí.">
     <meta property="og:image" content="https://autodoprava-sedlacek.cz/img/og-image.webp">
 
-    <!-- Tailwind CSS -->
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preload" href="img/truck-hero.webp" as="image" fetchpriority="high">
+
+    <!-- Tailwind CSS (via CDN for simplicity without build step) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Configure Tailwind Theme -->
@@ -316,10 +320,11 @@
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section id="home" class="relative min-h-screen flex flex-col items-center pt-32 bg-gray-900 overflow-hidden">
+        <!-- Adjusted height for mobile to show more of the truck image (h-[75vh]) while keeping full screen on desktop -->
+        <section id="home" class="relative h-[75vh] md:h-screen flex flex-col items-center pt-32 bg-gray-900 overflow-hidden">
             <div class="absolute inset-0 z-0">
-                <!-- Image kept colorful (removed grayscale/blur) and increased opacity for brightness -->
-                <img src="img/truck-hero.webp" alt="Nákladní automobil na cestě" class="w-full h-full object-cover opacity-90" width="1920" height="1080" fetchpriority="high">
+                <!-- Image kept colorful, added object-center for better positioning -->
+                <img src="img/truck-hero.webp" alt="Truck on the road" class="w-full h-full object-cover object-center opacity-90" width="1920" height="1080" fetchpriority="high">
                 
                 <!-- GRADIENTS -->
                 <div class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black/95 via-black/50 to-transparent z-0 pointer-events-none"></div>
@@ -388,7 +393,6 @@
                     </div>
                     <div class="lg:w-1/2">
                         <h3 class="text-2xl font-bold mb-6 text-silver" data-i18n="about.company">Autodoprava René Sedláček s.r.o.</h3>
-                        <!-- UPDATED TEXT HERE -->
                         <p class="text-gray-300 mb-4 leading-relaxed text-lg" data-i18n="about.desc1">
                             Jsme spolehlivý dopravce se sídlem v Dolní Lutyni, specializující se na nákladní dopravu. Nabízíme přepravu v rámci České republiky i celé Evropy.
                         </p>
@@ -408,7 +412,7 @@
             </div>
         </section>
 
-        <!-- Services Section (UPDATED DESCRIPTIONS) -->
+        <!-- Services Section -->
         <section id="services" class="py-12 md:py-20 bg-black">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-16">
