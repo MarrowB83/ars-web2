@@ -21,7 +21,8 @@
 
     <!-- Performance Optimizations -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    <link rel="preload" href="img/truck-hero.webp" as="image" fetchpriority="high">
+    <!-- Updated preload with imagesizes to match the img tag for LCP optimization -->
+    <link rel="preload" href="img/truck-hero.webp" as="image" fetchpriority="high" imagesizes="100vw">
 
     <!-- Tailwind CSS (via CDN for simplicity without build step) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -94,6 +95,16 @@
             font-family: 'Inter', sans-serif;
             background-color: #000;
             color: #fff;
+        }
+
+        /* CLS Optimization: Reserve space for Hero section before Tailwind loads */
+        #home {
+            min-height: 75vh;
+        }
+        @media (min-width: 768px) {
+            #home {
+                min-height: 100vh;
+            }
         }
 
         /* Premium Dark Background */
@@ -221,7 +232,7 @@
 
                 <!-- Language Switcher -->
                 <div class="relative group h-full flex items-center">
-                    <button class="flex items-center bg-silver-gradient text-black px-3 py-1 rounded-md font-bold hover:opacity-90 transition-all" aria-label="Změnit jazyk">
+                    <button class="flex items-center bg-silver-gradient text-black px-3 py-1 rounded-md font-bold hover:opacity-90 transition-all">
                         <span id="current-lang-display">CZ</span>
                         <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i>
                     </button>
@@ -272,7 +283,8 @@
         <section id="home" class="relative h-[75vh] md:h-screen flex flex-col items-center pt-32 bg-gray-900 overflow-hidden">
             <div class="absolute inset-0 z-0">
                 <!-- Image kept colorful, added object-center for better positioning -->
-                <img src="img/truck-hero.webp" alt="Truck on the road" class="w-full h-full object-cover object-center opacity-90" width="1920" height="1080" fetchpriority="high">
+                <!-- Added decoding="sync" and sizes="100vw" for LCP optimization -->
+                <img src="img/truck-hero.webp" alt="Truck on the road" class="w-full h-full object-cover object-center opacity-90" width="1920" height="1080" fetchpriority="high" decoding="sync" sizes="100vw">
                 
                 <!-- GRADIENTS -->
                 <div class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black/95 via-black/50 to-transparent z-0 pointer-events-none"></div>
