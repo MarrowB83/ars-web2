@@ -60,7 +60,7 @@
       "name": "Autodoprava René Sedláček s.r.o.",
       "image": "https://autodoprava-sedlacek.cz/img/logo.webp",
       "telephone": "+420 774 481 918",
-      "email": "info@autodoprava-sedlacek.cz",
+      "email": "info@ars-doprava.eu",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Na Svahu 1481",
@@ -649,12 +649,12 @@
                     <!-- Secondary Info Grid -->
                     <div class="grid md:grid-cols-2 gap-8">
                         <!-- Email -->
-                        <a href="mailto:info@autodoprava-sedlacek.cz" class="bg-gray-900 p-8 rounded-xl border border-gray-800 text-center hover:border-silver transition-colors group block">
+                        <a href="mailto:info@ars-doprava.eu" class="bg-gray-900 p-8 rounded-xl border border-gray-800 text-center hover:border-silver transition-colors group block">
                             <div class="bg-white/5 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4 mx-auto group-hover:bg-silver group-hover:text-black transition-colors">
                                 <i data-lucide="mail" class="text-silver w-8 h-8 group-hover:text-black"></i>
                             </div>
                             <h3 class="text-xl font-bold mb-2 text-white">Email</h3>
-                            <p class="text-gray-400 group-hover:text-silver transition-colors">info@autodoprava-sedlacek.cz</p>
+                            <p class="text-gray-400 group-hover:text-silver transition-colors">info@ars-doprava.eu</p>
                         </a>
 
                         <!-- Address -->
@@ -997,24 +997,48 @@
             }
         };
 
-        function changeLanguage(lang) {
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    el.innerHTML = translations[lang][key];
-                }
-            });
-            document.getElementById('current-lang-display').textContent = lang.toUpperCase();
+        function changeLanguage(lang, skipAnimation = false) {
+            const elements = document.querySelectorAll('[data-i18n]');
             
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                if(btn.getAttribute('data-lang') === lang) {
-                    btn.classList.add('bg-silver-gradient', 'text-black');
-                    btn.classList.remove('bg-gray-800', 'text-gray-300');
-                } else {
-                    btn.classList.remove('bg-silver-gradient', 'text-black');
-                    btn.classList.add('bg-gray-800', 'text-gray-300');
-                }
+            // Animation function
+            const updateText = () => {
+                elements.forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (translations[lang] && translations[lang][key]) {
+                        el.innerHTML = translations[lang][key];
+                    }
+                });
+                document.getElementById('current-lang-display').textContent = lang.toUpperCase();
+                
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    if(btn.getAttribute('data-lang') === lang) {
+                        btn.classList.add('bg-silver-gradient', 'text-black');
+                        btn.classList.remove('bg-gray-800', 'text-gray-300');
+                    } else {
+                        btn.classList.remove('bg-silver-gradient', 'text-black');
+                        btn.classList.add('bg-gray-800', 'text-gray-300');
+                    }
+                });
+            };
+
+            if (skipAnimation) {
+                updateText();
+                return;
+            }
+
+            // Fade Out
+            elements.forEach(el => {
+                el.style.transition = 'opacity 0.2s ease-in-out';
+                el.style.opacity = '0';
             });
+
+            // Wait for fade out, update text, then fade in
+            setTimeout(() => {
+                updateText();
+                elements.forEach(el => {
+                    el.style.opacity = '1';
+                });
+            }, 200);
         }
 
         function toggleMobileMenu() {
@@ -1053,8 +1077,8 @@
             });
         });
 
-        // Set initial active state for CZ
-        changeLanguage('cz');
+        // Set initial active state for CZ - skip animation on load
+        changeLanguage('cz', true);
     </script>
 </body>
 </html>
