@@ -285,8 +285,8 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
-        <section id="home" class="relative h-[75vh] md:h-screen flex flex-col items-center pt-32 bg-gray-900 overflow-hidden">
+        <!-- Hero Section - UPDATED: min-h-[75vh], responzivní padding, flex layout fix pro mobil -->
+        <section id="home" class="relative min-h-[75vh] md:h-screen flex flex-col items-center pt-24 md:pt-32 bg-gray-900 overflow-hidden">
             <div class="absolute inset-0 z-0">
                 <img src="img/truck-hero.webp" alt="Truck on the road" class="w-full h-full object-cover object-center opacity-90" width="1920" height="1080" fetchpriority="high">
                 
@@ -298,7 +298,7 @@
             <!-- Top Content: Headline & Buttons -->
             <div class="container mx-auto px-4 z-10 text-center relative">
                 <div class="animate-fade-in-up">
-                    <h1 class="text-4xl md:text-7xl font-extrabold mb-8 tracking-tight">
+                    <h1 class="text-4xl md:text-7xl font-extrabold mb-6 md:mb-8 tracking-tight">
                         <span class="text-silver drop-shadow-lg" data-i18n="hero.professional">PROFESIONÁLNÍ</span><br />
                         <span class="text-white drop-shadow-md" data-i18n="hero.transport">LOGISTIKA & DOPRAVA</span>
                     </h1>
@@ -311,9 +311,9 @@
                 </div>
             </div>
 
-            <!-- Bottom Content: Description & Insurance -->
-            <div class="absolute bottom-8 left-0 w-full z-10 text-center px-4 pb-4">
-                <p class="text-xl md:text-2xl text-gray-100 mb-6 max-w-3xl mx-auto font-light leading-relaxed drop-shadow-md" data-i18n="hero.desc">
+            <!-- Bottom Content: Description & Insurance - UPDATED: Responzivní pozicování (není absolute na mobilu) a menší text -->
+            <div class="relative mt-auto md:absolute md:bottom-8 left-0 w-full z-10 text-center px-4 pb-8 md:pb-4">
+                <p class="text-sm sm:text-base md:text-2xl text-gray-100 mb-4 md:mb-6 max-w-3xl mx-auto font-light leading-relaxed drop-shadow-md" data-i18n="hero.desc">
                     Specialisté na nadměrné náklady a přepravu stavební techniky. Jezdíme Českou republiku i celou Evropu bezpečně a včas.
                 </p>
 
